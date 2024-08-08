@@ -29,7 +29,7 @@ async def on_ready() -> None:
         print(e)
 
 @tree.command(name="manga_search", description="search for a manga")
-@app_commands.describe(manga="the ID of the manga")
+@app_commands.describe(manga="the ID of the manga (check URL on manhuagui)")
 async def manga_search(interaction: discord.Interaction, manga: str):
     await interaction.response.defer()
     try:
@@ -39,7 +39,7 @@ async def manga_search(interaction: discord.Interaction, manga: str):
     await interaction.followup.send(output)
 
 @tree.command(name="manga_add", description="add a manga to your subscription list (10 second cooldown)")
-@app_commands.describe(manga="the ID of the manga")
+@app_commands.describe(manga="the ID of the manga (check URL on manhuagui)")
 async def manga_add(interaction: discord.Interaction, manga: str):
     await interaction.response.defer()
     addTitle = await mg.add_manga(manga, interaction.user.id)
