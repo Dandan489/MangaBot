@@ -171,7 +171,7 @@ async def update_anime(username: str) -> str:
                 if(newTime > oldTime):
                     returnText += title
                     returnText += ' updated!\n'
-                    returnText += f'{url}\n'
+                    returnText += f'{url}'
                     mangaText = f'{title} 更新時間: {newTimeText} {url}'
                     lines[i] = mangaText
                 
